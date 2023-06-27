@@ -8,7 +8,7 @@ const products = require("./routes/productroute");
 require("dotenv").config();
 mongoose.Promise = global.Promise;
 const uri = process.env.MONGO_URI;
-
+mongoose.set("strictQuery", false);
 mongoose
   .connect(uri)
   .then(() => console.log("COMPLETE"))
